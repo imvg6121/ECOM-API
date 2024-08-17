@@ -23,10 +23,11 @@ import likeRouter from './src/features/like/like.routes.js'
 const server = express()
 
 //CORS policy configuration
-var corsOptions={
-    origin:'http://localhost:5500'
-}
-server.use(cors(corsOptions))
+var corsOptions = {
+    origin: process.env.CLIENT_ORIGIN || 'http://localhost:5500'
+};
+server.use(cors(corsOptions));
+
 
 server.use(bodyParser.json())
 server.use('/api-docs',swagger.serve,swagger.setup(apiDocs))
@@ -60,7 +61,8 @@ server.use((err,req,res,next)=>{
 })
 
 //4.Specify port
-server.listen(3200,()=>{
+const PORT = process.env.PORT || 3200;
+server.listen(PORT,()=>{
     console.log("Server is listening on port 3200")
    // connectToMongoDB()
    connectUsingMongoose()
@@ -77,14 +79,3 @@ server.listen(3200,()=>{
 
 
 
-// using cors()
-// server.use((req,res,next)=>{
-//     res.header('Access-Control-Allow-Origin','http://localhost:5500')
-//     res.header('Access-Control-Allow-Headers','*')
-//     res.header('Access-Control-Allow-Methods','*')
-//     //return ok for preflight requests
-//     if(req.method=='OPTIONS'){
-//         return res.sendStatus(200)
-//     }
-//     next()
-// })
