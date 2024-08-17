@@ -32,6 +32,10 @@ server.use(cors(corsOptions));
 server.use(bodyParser.json())
 server.use('/api-docs',swagger.serve,swagger.setup(apiDocs))
 server.use(loggerMiddleware)
+server.get('/',(req,res)=>{
+    res.send("Welcome to Ecommerce APIs")
+})
+
 //for all requests related to products send it to product router
 server.use('/api/products',jwtAuth,productRouter)
 server.use('/api/users',userRouter)
@@ -43,9 +47,6 @@ server.use((req,res)=>{
 })
 
 //3.default request handler
-server.get('/',(req,res)=>{
-    res.send("Welcome to Ecommerce APIs")
-})
 
 //Error handler Middleware
 server.use((err,req,res,next)=>{

@@ -194,3 +194,8 @@
 {"level":"info","message":"/api/likes?id=66af30252493d2605fc14bd0&type=Product-{\"type\":\"Product\",\"id\":\"66af30252493d2605fc14bd0\"}","service":"request-logging"}
 {"level":"info","message":"/api/likes?id=66af30252493d2605fc14bd0&type=Product-{\"type\":\"Product\",\"id\":\"66af30252493d2605fc14bd0\"}","service":"request-logging"}
 {"level":"info","message":"/api/likes?id=66af30252493d2605fc14bd0&type=Product-{\"type\":\"Product\",\"id\":\"66af30252493d2605fc14bd0\"}","service":"request-logging"}
+{"level":"info","message":"/-{}","service":"request-logging"}
+{"level":"info","message":"/favicon.ico-{}","service":"request-logging"}
+{"level":"info","message":"/-{}","service":"request-logging"}
+{"level":"info","message":"/-{}","service":"request-logging"}
+{"level":"info","message":"/-{}","service":"request-logging"}
